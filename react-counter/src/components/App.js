@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Counter from './Counter.js';
+import History from './History.js';
 
 class App extends Component {
 	render() {
@@ -11,6 +12,7 @@ class App extends Component {
 				</div>
 
 				<Counter />
+				<History />
 			</div>
 		);
 	}

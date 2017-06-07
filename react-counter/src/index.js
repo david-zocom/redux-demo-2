@@ -5,14 +5,19 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import {rootReducer} from './reducers.js';
+import {createStore, combineReducers} from 'redux';
+import * as Reducer from './reducers.js';
 
 
 const initialState = {
-	value: 5
+	value: 5,
+	history: []
 };
 
+let rootReducer = combineReducers({
+	value: Reducer.value,
+	history: Reducer.history
+});
 const store = createStore(rootReducer, initialState);
 //store.subscribe
 

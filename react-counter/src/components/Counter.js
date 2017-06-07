@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {actionIncrease, actionDecrease} from '../actions.js';
+import {actionIncrease, actionDecrease, actionHistory} from '../actions.js';
 
 class Counter extends Component {
 	render() {
@@ -14,9 +14,11 @@ class Counter extends Component {
 	}
 	handleIncreaseClick = (event) => {
 		this.props.dispatch(actionIncrease());
+		this.props.dispatch(actionHistory(this.props.value));
 	}
 	handleDecreaseClick = (event) => {
 		this.props.dispatch(actionDecrease());
+		this.props.dispatch(actionHistory(this.props.value));
 	}
 }
 
